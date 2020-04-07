@@ -2,6 +2,9 @@
   "name": "wechat",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "12.x"
+  },
   "main": "index.js",
   "dependencies": {
     "ejs": "^3.0.2",
@@ -18,6 +21,11 @@
     "type": "git",
     "url": "git+https://github.com/vcbenj/project.git"
   },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -25,3 +33,5 @@
   },
   "homepage": "https://github.com/vcbenj/project#readme"
 }
+
+
