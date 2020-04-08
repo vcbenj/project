@@ -13,7 +13,7 @@
         #messages li { padding: 5px 10px; }
         #messages li:nth-child(odd) { background: #eee; }
     </style>
-    <!-- <script src="../../socket.io/socket.io.js"></script> -->
+    <!-- <script src="../../socket.io/socket.io.js"></script> This is what was wrong!!-->
    <script src="../socket.io/socket.io.js"></script> 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
@@ -27,22 +27,22 @@
             var socket = io.connect();
             //var socket = io.connect('https://quiet-castle-39476.herokuapp.com');
             //var socket = io.connect('process.env.PORT');
-            // submit text message without reload/refresh the page
+            // Trying different ways to connect
             $('form').submit(function(e){
-                e.preventDefault(); // prevents page reloading
+                e.preventDefault(); 
                 socket.emit('chat_message', $('#txt').val());
                 $('#txt').val('');
                 return false;
             });
-            // append the chat text message
+            
             socket.on('chat_message', function(msg){
                 $('#messages').append($('<li>').html(msg));
             });
-            // append text if someone is online
+            
             socket.on('is_online', function(username) {
                 $('#messages').append($('<li>').html(username));
             });
-            // ask username
+            // get the username
             var username = prompt('Please tell me your name');
             socket.emit('username', username);
     </script>
