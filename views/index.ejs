@@ -22,8 +22,9 @@
     </form>
     <script>
             //var socket = io.connect('http://localhost:8080');
+            var socket = io.connect();
             //var socket = io.connect('https://quiet-castle-39476.herokuapp.com');
-            var socket = io.connect('process.env.PORT');
+            //var socket = io.connect('process.env.PORT');
             // submit text message without reload/refresh the page
             $('form').submit(function(e){
                 e.preventDefault(); // prevents page reloading
